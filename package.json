@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "deleteAllureResult": "rm -r allure-results",
-    "testRun": "wdio run wdio.conf.ts"
+    "testRun": "wdio wdio.conf.ts"
   },
   "keywords": [
     "JENKINS"
