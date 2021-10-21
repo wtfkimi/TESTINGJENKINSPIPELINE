@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "deleteAllureResult": "rm -r allure-results",
-    "test": "npx wdio run wdio.conf.ts --spec alert.e2e.ts"
+    "testRun": "npx wdio run wdio.conf.ts --spec alert.e2e.ts"
   },
   "keywords": [
     "JENKINS"
