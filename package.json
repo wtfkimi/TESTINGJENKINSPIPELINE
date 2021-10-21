@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "run": "npx wdio wdio.conf.ts",
+    "deleteAllureResult": "rm -r allure-results",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
