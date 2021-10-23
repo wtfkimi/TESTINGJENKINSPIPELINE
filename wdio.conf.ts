@@ -57,6 +57,9 @@ export const config: WebdriverIO.Config = {
         maxInstances: 5,
         //
         browserName: 'chrome',
+        'goog:chromeOptions': {
+            args: ["--headless", "user-agent=...","--disable-gpu","--window-size=1440,735"]
+        },
         acceptInsecureCerts: true
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
@@ -135,7 +138,8 @@ export const config: WebdriverIO.Config = {
     reporters: [['allure', {
         outputDir: 'allure-results',
         disableWebdriverStepsReporting: true,
-        disableWebdriverScreenshotsReporting: true,
+        disableWebdriverScreenshotsReporting: false,
+        useCucumberStepReporter: false
     }]],
 
     
@@ -196,8 +200,11 @@ export const config: WebdriverIO.Config = {
      * @param {String} commandName hook command name
      * @param {Array} args arguments that command would receive
      */
-    // beforeCommand: function (commandName, args) {
-    // },
+    beforeCommand: function (commandName, args) {
+        if (commandName) {
+            browser.takeScreenshot();
+        }
+    },
     /**
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
@@ -224,7 +231,8 @@ export const config: WebdriverIO.Config = {
     /**
      * Function to be executed after a test (in Mocha/Jasmine).
      */
-    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
+    // afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+    //     await browser.takeScreenshot();
     // },
 
 
