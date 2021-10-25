@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/wtfkimi/TESTINGJENKINSPIPELINE#readme",
   "devDependencies": {
-    "@wdio/cli": "^7.16.0",
+    "@wdio/cli": "^7.3.1",
     "@wdio/local-runner": "^7.16.0",
     "@wdio/mocha-framework": "^7.16.0",
     "@wdio/selenium-standalone-service": "^7.16.0",
